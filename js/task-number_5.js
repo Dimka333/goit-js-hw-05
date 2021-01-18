@@ -21,12 +21,12 @@ class Car {
    *  distance - общий киллометраж, изначально 0
    */
   constructor({speed, price, maxSpeed, isOn, distance}) {
-    this._speed = speed;
+    this._speed = speed =0;
     this._price = price;
     this._maxSpeed = maxSpeed;
-    this._isOn = isOn;
-    this._distance = distance;
-      
+    this._isOn = isOn = false;
+    this._distance = distance = 0;
+    
   }
 
 
@@ -89,13 +89,15 @@ class Car {
    */
   drive(hours) {
     if (this._isOn === true) {
-      this._distance = hours * this._speed;
+      this._distance = this._speed * hours;
     }
     return;
   }
 }
 
 const mustang = new Car({ maxSpeed: 200, price: 2000 });
+
+
 
 mustang.turnOn();
 mustang.accelerate(50);
